@@ -7,3 +7,4 @@ A collection of the different vagrant templates for personal usage.
 
 * [PredictionIO](PredictionIO)
     - [PredictionIO installation guide](https://docs.prediction.io/install/)
+    - [Quick Start with Recommendation Engine Template](https://docs.prediction.io/templates/recommendation/quickstart/)
