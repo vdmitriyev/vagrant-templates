@@ -14,5 +14,5 @@ A collection of the different vagrant templates for personal usage.
         ```
         vagrant plugin install vagrant-winnfsd
         ```
-* [IntroBigDataApacheSpark](IntroBigDataApacheSpark)
+* [IntroBigDataSparkMOOC](IntroBigDataSparkMOOC)
     - [Information for setting up for the Spark MOOC](https://github.com/spark-mooc/mooc-setup/)
