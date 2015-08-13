@@ -14,5 +14,7 @@ A collection of the different vagrant templates for personal usage.
         ```
         vagrant plugin install vagrant-winnfsd
         ```
-* [IntroBigDataSparkMOOC](IntroBigDataSparkMOOC)
+* [BerkleyBigDataSparkMOOCs](BerkleyBigDataSparkMOOCs)
     - [Information for setting up for the Spark MOOC](https://github.com/spark-mooc/mooc-setup/)
+* [Hortonworks Data Platform](HDP)
+    - An starting vagrant file that helps in installing Hadoop to the virtual environment. For more details check README file.
