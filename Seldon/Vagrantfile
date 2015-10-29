@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.network "private_network", ip: "172.17.8.151"
   #config.vm.network "private_network", type: "dhcp"
   #config.vm.network "bridged"
+  
   config.ssh.username = "core"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
