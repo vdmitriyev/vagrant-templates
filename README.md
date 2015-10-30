@@ -5,6 +5,7 @@ A collection of the different vagrant templates for personal usage.
 
 ### Collection of templates
 
+* [AnacondaVM](AnacondaVM)
 * [PredictionIO](PredictionIO)
     - [PredictionIO installation guide](https://docs.prediction.io/install/)
     - [Quick Start with Recommendation Engine Template](https://docs.prediction.io/templates/recommendation/quickstart/)
