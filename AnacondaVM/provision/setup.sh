@@ -40,6 +40,14 @@ fi
 echo "Installing Git"
 apt-get install git -y > /dev/null
 
+# JDK
+echo "Installing Java JDK"
+sudo apt-get install default-jdk -y > /dev/null
+
+# Ant
+echo "Installing Ant"
+apt-get install ant1.7 -y > /dev/null
+
 # Reloading bash 
 echo "Reloading .bashrc"
 source /home/vagrant/.bashrc
