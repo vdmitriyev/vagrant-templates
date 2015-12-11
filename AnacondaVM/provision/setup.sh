@@ -48,6 +48,12 @@ sudo apt-get install default-jdk -y > /dev/null
 echo "Installing Ant"
 apt-get install ant1.7 -y > /dev/null
 
+# Lua
+# apt-get install lua5.1
+
+# Compiler and headers
+#apt-get install gcc make build-essential linux-headers-$(uname -r)
+
 # Reloading bash 
 echo "Reloading .bashrc"
 source /home/vagrant/.bashrc
