@@ -8,7 +8,7 @@ anaconda=Anaconda-2.3.0-Linux-x86_64.sh
 
 if [ ! -f "$anaconda" ]; then
     echo "Downloading Anaconda installer. This may take more than a few minutes."
-	wget -q -o /dev/null - https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Linux-x86_64.sh
+	wget -q -o /dev/null - http://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh
 else
 	echo "Anaconda is already downloaded."
 fi
@@ -18,7 +18,7 @@ if [ -f "$anaconda" ];  then
 		chmod +x "$anaconda"
 		./"$anaconda" -b -p /opt/anaconda
 		
-		# For anaconda
+		# for anaconda
 		PATH=/opt/anaconda/bin:$PATH
 		echo "Anaconda was installed."
 		
@@ -26,7 +26,7 @@ if [ -f "$anaconda" ];  then
 		echo "PATH was set in .bashrc"
 		conda create --name analysis python=2
 	else
-		# For anaconda
+		# for anaconda
 		PATH=/opt/anaconda/bin:$PATH
 		echo "Anaconda is already installed"
 	fi
