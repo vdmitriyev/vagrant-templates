@@ -35,6 +35,10 @@ else
 fi
 
 # Jupyter
+#
+
+# Always good ideas to update apt-get before installing anything
+sudo apt-get update
 
 # Git
 echo "Installing Git"
@@ -52,7 +56,7 @@ apt-get install ant1.7 -y > /dev/null
 # apt-get install lua5.1
 
 # Compiler and headers
-#apt-get install gcc make build-essential linux-headers-$(uname -r)
+apt-get install gcc make build-essential linux-headers-$(uname -r)
 
 # Reloading bash 
 echo "Reloading .bashrc"
@@ -68,4 +72,6 @@ else
 	echo "INFO: Try to create folder $notebook"
 fi
 
+cd /home
+chown -R vagrant:vagrant /vagrant
 echo "Finished provisioning."
