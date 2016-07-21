@@ -40,13 +40,27 @@ fi
 # Always good ideas to update apt-get before installing anything
 sudo apt-get update
 
+# Some utilities
+sudo apt-get install software-properties-common
+sudo apt-get install python-software-properties
+
+# Compiler and headers
+apt-get install gcc make build-essential linux-headers-$(uname -r)
+
+
 # Git
 echo "Installing Git"
 apt-get install git -y > /dev/null
 
-# JDK
+# JDK - Default
 echo "Installing Java JDK"
 sudo apt-get install default-jdk -y > /dev/null
+
+# JDK > 1.7
+# sudo add-apt-repository ppa:webupd8team/java
+# sudo apt-get update
+# sudo apt-get install oracle-java7-installer
+# sudo apt-get install oracle-java7-set-default
 
 # Ant
 echo "Installing Ant"
@@ -54,9 +68,6 @@ apt-get install ant1.7 -y > /dev/null
 
 # Lua
 # apt-get install lua5.1
-
-# Compiler and headers
-apt-get install gcc make build-essential linux-headers-$(uname -r)
 
 # Reloading bash 
 echo "Reloading .bashrc"
