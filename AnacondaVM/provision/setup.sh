@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Provisioning virtual machine..."
 
 # Anaconda
@@ -85,4 +86,5 @@ fi
 
 cd /home
 chown -R vagrant:vagrant /vagrant
-echo "Finished provisioning."
+
+echo "Finished provisioning ..."
