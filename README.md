@@ -25,7 +25,7 @@ A collection of the different vagrant templates for personal usage.
     - [H2O Vagrant Development Environment](https://github.com/h2oai/h2o-3/tree/master/vagrant)
     - [Using Vagrant to scale data science projects with Google Cloud Compute](http://blog.nguyenvq.com/blog/2016/03/07/using-vagrant-to-scale-data-science-projects-with-google-cloud-compute/)
     - [How-to: Train Models in R and Python using Apache Spark MLlib and H2O](https://blog.cloudera.com/blog/2016/01/how-to-train-models-in-r-and-python-using-apache-spark-mllib-and-h2o/)
-* [vagrant-kafka](vagrant-kafka)
+* [KafkaCluster](KafkaCluster)
     - Mostly based on the following repository - https://github.com/eucuepo/vagrant-kafka
     - Changes:
         + Downlaod RPM packed of the JDF manually and place into "rpm" folder (from time to time automated download is not working in provision)

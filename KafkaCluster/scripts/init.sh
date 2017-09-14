@@ -38,3 +38,25 @@ echo "done installing jdk and Kafka"
 
 # chmod scripts
 chmod u+x /vagrant/scripts/*.sh
+chmod u+x /vagrant/python/*.sh
+
+sudo yum -y install dos2unix
+
+# in case host is windows
+dos2unix /vagrant/scripts/*.sh
+
+# Python
+sudo yum -y install epel-release
+sudo yum -y install python-pip
+sudo pip install --upgrade pip
+sudo pip install -r /vagrant/python/requirements.txt
+
+#
+# new version of python (now working properly, installs only Py27)
+#
+# sudo yum -y update # update yum
+# sudo yum -y install centos-release-scl # install SCL 
+# sudo yum -y install python27 # install Python 2.7
+# scl enable python27 bash
+# sudo pip install --upgrade pip
+# sudo pip install -r /vagrant/python/requirements.txt
