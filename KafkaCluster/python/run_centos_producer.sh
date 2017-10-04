@@ -1,0 +1,1 @@
+/usr/bin/python2.6 py_kafka_producer_test.py

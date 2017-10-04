@@ -6,5 +6,6 @@ if [ ! -d /tmp/zookeeper ]; then
     mkdir /tmp/zookeeper
     echo $1 > /tmp/zookeeper/myid
 fi
+
 # echo starting zookeeper 
 $HOME/kafka_2.10-0.9.0.1/bin/zookeeper-server-start.sh /vagrant/config/zookeeper.properties > /tmp/zookeeper.log &

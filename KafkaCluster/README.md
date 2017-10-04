@@ -29,12 +29,12 @@ Here is the mapping of VMs to their private IPs:
 
 | Name        | Address    |
 |-------------|------------|
-|zookeeper1   | 10.30.3.2  |
-|zookeeper2   | 10.30.3.3  |
-|zookeeper3   | 10.30.3.4  |
-|broker1      | 10.30.3.30 |
-|broker2      | 10.30.3.20 |
-|broker3      | 10.30.3.10 |
+|zookeeper1   | 10.30.3.101 |
+|zookeeper2   | 10.30.3.102 |
+|zookeeper3   | 10.30.3.103 |
+|broker1      | 10.30.3.201 |
+|broker2      | 10.30.3.202 |
+|broker3      | 10.30.3.203 |
 
 Zookeeper servers bind to port 2181. Kafka brokers bind to port 9092.
 
@@ -91,7 +91,7 @@ Here are some commands you can run on any of the nodes to see some of the intern
 
 #### Open a ZK shell
 
-```$HOME/kafka_2.10-0.9.0.1/bin/zookeeper-shell.sh 10.30.3.2:2181```
+```$HOME/kafka_2.10-0.9.0.1/bin/zookeeper-shell.sh 10.30.3.101:2181```
 
 (you can use the IP of any of the ZK servers)
 
@@ -124,18 +124,18 @@ sudo yum install nc -y
 To get the version of ZK type:
 
 ```bash
-echo status | nc 10.30.3.2 2181
+echo status | nc 10.30.3.101 2181
 ```
 
-You can replace 10.30.3.2 with any ZK IP 10.30.3.<2,3,4> and execute the above command from any node within the cluster.
+You can replace 10.30.3.2 with any ZK IP 10.30.3.<101,102,103> and execute the above command from any node within the cluster.
 
 *Q: Which Zookeeper server is the leader?*
 
 Here is a simple script that asks each server for its mode:
 
 ```bash
-for i in 2 3 4; do
-   echo "10.30.3.$i is a "$(echo status | nc 10.30.3.$i 2181 | grep ^Mode | awk '{print $2}')
+for i in 1 2 3; do
+   echo "10.30.3.10$i is a "$(echo status | nc 10.30.3.10$i 2181 | grep ^Mode | awk '{print $2}')
 done
 ```
 
@@ -159,7 +159,7 @@ Send data to the Kafka topic
 
 ```bash
 echo "Yet another line from stdin" | ./kafka_2.10-0.9.0.1/bin/kafka-console-producer.sh \
-   --topic test-one --broker-list 10.30.3.10:9092,10.30.3.20:9092,10.30.3.30:9092
+   --topic test-one --broker-list 10.30.3.201:9092,10.30.3.202:9092,10.30.3.203:9092
 ```
 
 You can then test that the line was added by running the consumer
@@ -189,7 +189,7 @@ Redirecing this output to Kafka creates a basic form of a streaming producer.
 
 ```bash
 vmstat -a 1 -n 100 | ./kafka_2.10-0.9.0.1/bin/kafka-console-producer.sh \
-   --topic test-one --broker-list 10.30.3.10:9092,10.30.3.20:9092,10.30.3.30:9092 &
+   --topic test-one --broker-list 10.30.3.201:9092,10.30.3.202:9092,10.30.3.203:9092 &
 ```
 
 While the producer runs in the background you can start the consumer to see what happens

@@ -60,3 +60,8 @@ sudo pip install -r /vagrant/python/requirements.txt
 # scl enable python27 bash
 # sudo pip install --upgrade pip
 # sudo pip install -r /vagrant/python/requirements.txt
+
+#
+# some utilities
+#
+# sudo yum -y install nc.x86_64
