@@ -1,0 +1,11 @@
+[Unit]
+Description=Pentaho Server 7 CE
+
+[Service]
+Type=oneshot
+ExecStart=/opt/pentaho/pentaho-server/start-pentaho.sh
+ExecStop=/opt/pentaho/pentaho-server/stop-pentaho.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
