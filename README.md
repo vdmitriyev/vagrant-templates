@@ -27,5 +27,10 @@ A collection of the different vagrant templates for personal usage.
     - [How-to: Train Models in R and Python using Apache Spark MLlib and H2O](https://blog.cloudera.com/blog/2016/01/how-to-train-models-in-r-and-python-using-apache-spark-mllib-and-h2o/)
 * [KafkaCluster](KafkaCluster)
     - Mostly based on the following repository - https://github.com/eucuepo/vagrant-kafka
+    - Changes
+        + Download RPM packed of the JDF manually and place into "rpm" folder (from time to time automated download is not working in provision)
+* [PentahoCE](PentahoCE)
+    - Mostly based on the following repository - https://github.com/lricardo/vagrant-pentaho-biserver-5
     - Changes:
-        + Downlaod RPM packed of the JDF manually and place into "rpm" folder (from time to time automated download is not working in provision)
+        + Put downloads into folder (/vagrant/downloads/)
+
