@@ -5,7 +5,11 @@ A collection of the different vagrant templates for personal usage.
 
 ### Vagrant notes
 
-* In case of problmes with the **rsync** utility on Windows, add following directory "..\Vagrant\embedded\usr\bin\" to the PATH variable.
+* In case of problmes with the **rsync** utility on Windows
+    - 1st posible solution add following directory "..\Vagrant\embedded\usr\bin\" to the PATH variable
+    - 2nd possible solution - Change "Vagrantfile" directly before installation here "c:\Users\<USER>\.vagrant.d\boxes\centos-VAGRANTSLASH-7\" (more here https://github.com/hashicorp/vagrant/issues/6696)
+        + ```#config.vm.synced_folder ".", "/vagrant", type: "rsync"```
+
 
 ### Collection of templates
 

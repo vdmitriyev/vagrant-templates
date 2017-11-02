@@ -1,0 +1,6 @@
+/.vagrant
+/resources/*.gz
+/resources/*.tgz
+.idea
+*.iml
+tmp
