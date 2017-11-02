@@ -3,6 +3,10 @@
 A collection of the different vagrant templates for personal usage.
 [Vagrant](https://www.vagrantup.com/about.html) can be installed from [here](https://www.vagrantup.com/downloads.html).
 
+### Vagrant notes
+
+* In case of problmes with the **rsync** utility on Windows, add following directory "..\Vagrant\embedded\usr\bin\" to the PATH variable.
+
 ### Collection of templates
 
 * [AnacondaVM](AnacondaVM)
@@ -33,4 +37,5 @@ A collection of the different vagrant templates for personal usage.
     - Mostly based on the following repository - https://github.com/lricardo/vagrant-pentaho-biserver-5
     - Changes:
         + Put downloads into folder (/vagrant/downloads/)
-
+* [NiFi](NiFi)
+    - Based on the following repository - https://github.com/minyk/nifi-sandbox
