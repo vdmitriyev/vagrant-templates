@@ -1,0 +1,9 @@
+com.apama.security.Motion();
+com.apama.security.Motion();
+
+com.apama.security.PresureSensor(3);
+com.apama.security.PresureSensor(4);
+om.apama.security.Motion();
+com.apama.security.Motion();
+com.apama.security.PresureSensor(5);
+com.apama.security.PresureSensor(6);

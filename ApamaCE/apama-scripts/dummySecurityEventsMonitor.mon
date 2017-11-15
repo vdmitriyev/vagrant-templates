@@ -1,0 +1,19 @@
+package com.apama.security;
+
+monitor Security {
+
+    integer massofAvgPet := 5;
+
+    action onload(){
+
+        on all com.apama.security.Motion(){
+            log "Some motion was detected!" at INFO;
+
+        }
+
+        on all com.apama.security.PressureSensor(>massofAvgPet){
+            log "Pressure sensor was activated. And it was not the right pet according to the weight threshold!" at INFO;
+        }
+    }
+
+}

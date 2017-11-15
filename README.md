@@ -9,7 +9,9 @@ A collection of the different vagrant templates for personal usage.
     - 1st posible solution add following directory "..\Vagrant\embedded\usr\bin\" to the PATH variable
     - 2nd possible solution - Change "Vagrantfile" directly before installation here "c:\Users\<USER>\.vagrant.d\boxes\centos-VAGRANTSLASH-7\" (more here https://github.com/hashicorp/vagrant/issues/6696)
         + ```#config.vm.synced_folder ".", "/vagrant", type: "rsync"```
-
+* Connect to Your Vagrant Virtual Machine with PuTTY via Private Key
+    - [Connect to Your Vagrant Virtual Machine with PuTTY](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY)
+        + NOTE: Just convert given private key into PuTTY format by skiping step 4
 
 ### Collection of templates
 

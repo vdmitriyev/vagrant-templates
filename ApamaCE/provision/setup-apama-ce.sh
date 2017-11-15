@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Prepearing setup
+echo "Preparing Apama CE (v10.1) setup"
+
+mkdir /opt/softwareag/
+chown -R ubuntu:ubuntu /opt/softwareag/
+
 # Install Apama CE 10.1
 echo "Download and install Apama CE (v10.1)"
 
@@ -14,7 +20,9 @@ else
 fi
 
 if [ -f "$apamace" ];  then
-	unzip "$apamace"
+	unzip -q "$apamace"
 else
 	echo "ERROR: Apama CE installer was not found."
 fi
+
+echo "User ./install for further actions, because sag installation utility requires intensive interaction."

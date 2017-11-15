@@ -1,0 +1,12 @@
+
+
+package com.apama.security;
+
+event Motion {
+
+}
+
+event PressureSensor {
+
+    integer massInKg;
+}

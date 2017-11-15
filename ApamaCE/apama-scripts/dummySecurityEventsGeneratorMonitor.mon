@@ -1,0 +1,34 @@
+package com.apama.security;
+
+monitor SecurityEventsGenerator {
+
+    integer random := 15;
+    integer massToSend := 7;
+    boolean sendMotionEvent := true;
+
+    action onload(){
+
+        on all wait (1.0){
+
+            if sendMotionEvent then {
+                // sending motion event
+                com.apama.security.Motion motionEvent := new com.apama.security.Motion;
+                route motionEvent;
+                sendMotionEvent := false;
+                emit motionEvent;
+            } else {
+                // sending pressure event
+
+                com.apama.security.PressureSensor pressureEvent := new com.apama.security.PressureSensor;
+                massToSend := random.rand();
+                pressureEvent.massInKg := massToSend;
+                route pressureEvent;
+                sendMotionEvent := true;
+                emit pressureEvent;
+
+            }
+        }
+
+    }
+
+}
