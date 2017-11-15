@@ -5,11 +5,17 @@ Installing "Apama CE 10.1".
 ## Running Apama via comman line
 
 * Use scripts that are in "apama-scripts" on your host or in /vagrant/apama-scripts/ at your VM
-* Start correlation
+* Start correlator
 ```
+
+# 1 variant
 cd /opt/softwareag/Apama/bin
 . apama_env
-correlation
+correlator
+
+# 2 variant
+. /opt/softwareag/Apama/bin/apama_env
+/opt/softwareag/Apama/bin/correlator
 ```
 * Inject monitors / events
 ```
@@ -23,9 +29,14 @@ correlation
 /opt/softwareag/Apama/bin/engine_delete com.apama.security.Security;
 /opt/softwareag/Apama/bin/engine_delete com.apama.security.SecurityEventsGenerator
 ```
-* Sending events
+* Sending events on by one
 ```
 /opt/softwareag/Apama/bin/engine_send /vagrant/apama-scripts/dummySecurityEventsSend.evt
+```
+* Monitoring events out of the correlator
+```
+. /opt/softwareag/Apama/bin/apama_env
+/opt/softwareag/Apama/bin/engine_receive
 ```
 
 ## Materials
