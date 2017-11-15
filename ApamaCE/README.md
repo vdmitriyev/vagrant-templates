@@ -42,3 +42,4 @@ correlator
 ## Materials
 
 * [Using Apama from the Linux Command Line](https://www.youtube.com/watch?v=hin-u-Hip4E)
+    + Following aricle could be used in order to automated installation on Linux systems -> [Headless and non-interactive Apama Installations](http://www.apamacommunity.com/headless-and-non-interactive-apama-installations/)
