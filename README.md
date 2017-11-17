@@ -45,3 +45,6 @@ A collection of the different vagrant templates for personal usage.
         + Put downloads into folder (/vagrant/downloads/)
 * [NiFi](NiFi)
     - Based on the following repository - https://github.com/minyk/nifi-sandbox
+* [ApamaCE](ApamaCE)
+    - Semi-automated installation of Apama Community Edition together with some initial scripts
+
