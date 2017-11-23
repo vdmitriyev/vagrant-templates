@@ -15,18 +15,18 @@ fi
 
 echo "Installing/unzipping Pentaho Data Integration ($PDI)"
 
-mkdir -p /opt/pentaho/
+mkdir -p /vagrant/installed/opt/pentaho/
 
-# Extract for server usage
-unzip -q /vagrant/downloads/$PDI -d /opt/pentaho/
+# Extract for server usage and host usage
+unzip -q /vagrant/downloads/$PDI -d /vagrant/installed/opt/pentaho/
 
 # Extract for server host
-unzip -q /vagrant/downloads/$PDI -d /vagrant/downloads/
+# unzip -q /vagrant/downloads/$PDI -d /vagrant/downloads/
 
 echo "Configuring Pentaho Data Integration"
 
 # Permission check
-chmod +x /opt/pentaho/data-integration/*.sh
+chmod +x /vagrant/installed/opt/pentaho/data-integration/*.sh
 
 # Less Java resources consumption
-sed -i s/"-Xms1024m -Xmx2048m -XX:MaxPermSize=256m"/"-Xms768m -Xmx1536m -XX:MaxPermSize=256m"/g /opt/pentaho/data-integration/spoon.sh
+sed -i s/"-Xms1024m -Xmx2048m -XX:MaxPermSize=256m"/"-Xms768m -Xmx1536m -XX:MaxPermSize=256m"/g /vagrant/installed/opt/pentaho/data-integration/spoon.sh

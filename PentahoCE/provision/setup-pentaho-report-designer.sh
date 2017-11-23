@@ -15,14 +15,10 @@ fi
 
 echo "Installing/unzipping Pentaho Report Designer ($PRD)"
 
-mkdir -p /opt/pentaho/
-unzip -q /vagrant/downloads/$PRD -d /opt/pentaho/
-unzip -q $PRD
+mkdir -p /vagrant/installed/opt/pentaho/
+unzip -q /vagrant/downloads/$PRD -d /vagrant/installed/opt/pentaho/
 
 echo "Configuring Pentaho Report Designer"
 
 # Permission check
-chmod +x /opt/pentaho/report-designer/*.sh
-
-# Less Java resources consumption
-#sed -i s/"-Xms1024m -Xmx2048m -XX:MaxPermSize=256m"/"-Xms768m -Xmx1536m -XX:MaxPermSize=256m"/g /opt/pentaho/data-integration/spoon.sh
+chmod +x /vagrant/installed/opt/pentaho/report-designer/*.sh
