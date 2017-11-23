@@ -26,5 +26,9 @@ Vagrant.configure("2") do |config|
   end
 
   # Enable provisioning with a shell script
-  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provision "shell", path: "provision/setup-general.sh"
+  config.vm.provision "shell", path: "provision/setup-java.sh"
+  config.vm.provision "shell", path: "provision/setup-postgresql.sh"
+  config.vm.provision "shell", path: "provision/setup-pentaho-ce.sh"
+  
 end

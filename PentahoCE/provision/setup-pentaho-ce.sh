@@ -1,31 +1,5 @@
 #!/bin/bash
 
-# Fix DNS
-rm /etc/resolv.conf
-ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf
-resolvconf -u
-
-# Update cache
-apt-get update
-# Upgrade packages
-apt-get upgrade -y
-
-# Install dependencies
-apt-get install unzip -y
-
-# Install Oracle Java 8
-echo "Download and install Oracle Java 8"
-add-apt-repository ppa:webupd8team/java
-apt-get update
-# Disable prompting
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-apt-get install oracle-java8-installer -y
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
-# Install PostgreSQL
-apt-get install postgresql -y
-
 #
 # Pentaho CE - Download, unzip and move the folder to "/opt"
 #
@@ -38,22 +12,13 @@ PENTAHO_URL="http://downloads.sourceforge.net/project/pentaho/Business%20Intelli
 
 if [ ! -f /vagrant/downloads/$PENTAHO_CE ]; then
     echo "Downloading Pentaho CE ($PENTAHO_CE)"
-	mkdir -p /downloads/
-	wget $PENTAHO_URL/$PENTAHO_CE -P /vagrant/downloads/
+	mkdir -p /vagrant/downloads/
+	wget -q $PENTAHO_URL/$PENTAHO_CE -P /vagrant/downloads/
 fi
 
 echo "Installing Pentaho CE ($PENTAHO_CE)"
-mkdir -p /opt/pentaho
+mkdir -p /opt/pentaho/
 unzip -q /vagrant/downloads/$PENTAHO_CE -d /opt/pentaho/
-
-# Change a detail in pg_hba.conf
-sed -i s/"local   all             all                                     peer"/"local   all             all                                     trust"/g /etc/postgresql/9.5/main/pg_hba.conf
-
-# Add future needed user
-useradd pentaho_user
-
-# Reload service
-systemctl restart postgresql
 
 fnInstallPentahoCE(){
 
@@ -179,16 +144,22 @@ fnInstallPentahoServer(){
 	sed -i s/"SampleDataAdmin\/url=jdbc:hsqldb:hsql:\/\/localhost\/sampledata"/"#SampleDataAdmin\/url=jdbc:hsqldb:hsql:\/\/localhost\/sampledata"/g /opt/pentaho/pentaho-server/pentaho-solutions/system/simple-jndi/jdbc.properties
 	sed -i s/"SampleDataAdmin\/user=pentaho_admin"/"#SampleDataAdmin\/user=pentaho_admin"/g /opt/pentaho/pentaho-server/pentaho-solutions/system/simple-jndi/jdbc.properties
 	sed -i s/"SampleDataAdmin\/password=password"/"#SampleDataAdmin\/password=password"/g /opt/pentaho/pentaho-server/pentaho-solutions/system/simple-jndi/jdbc.properties
+	
+	# Less java resources consumption
+	sed -i s/"-Xms2048m -Xmx6144m -XX:MaxPermSize=256m"/"-Xms768m -Xmx2048m -XX:MaxPermSize=256m"/g /opt/pentaho/pentaho-server/start-pentaho.sh
 
 	# Permission check
 	chmod +x /opt/pentaho/pentaho-server/*.sh
 
 	# Install the service into systemd
 	cp /vagrant/configs/pentaho-server.service /etc/systemd/system/
+	
 	# Enable automatic startup
 	systemctl enable pentaho-server.service
+	
 	# Disable automatic startup for other version
-	systemctl disable pentaho-bi.service
+	# systemctl disable pentaho-bi.service
+	
 	# Start pentaho
 	systemctl start pentaho-server.service
 }
