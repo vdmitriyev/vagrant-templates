@@ -12,6 +12,10 @@ A collection of the different vagrant templates for personal usage.
 * Connect to Your Vagrant Virtual Machine with PuTTY via Private Key
     - [Connect to Your Vagrant Virtual Machine with PuTTY](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Connect-to-Your-Vagrant-Virtual-Machine-with-PuTTY)
         + NOTE: Just convert given private key into PuTTY format by skiping step 4
+* How do I install a Vagrant Linux box that has a desktop / GUI ?
+    - https://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment
+    - https://stackoverflow.com/questions/31845472/how-do-i-install-a-vagrant-linux-box-that-has-a-gui-gnome-kde
+
 
 ### Collection of templates
 

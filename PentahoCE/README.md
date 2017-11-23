@@ -7,6 +7,7 @@ Installing "Pentaho Server 7.1". Current configuration is based on the repositor
 * Ubuntu 16.04.1 LTS
 * PostgreSQL 9.5 (without extensions loaded)
 * Pentaho BI Server 7.1.0
+* Pentaho Data Integration 7.1.0 (only with GUI enabled in Vagrant configs)
 * Oracle JDK 8
 * Add-on: Systemd unit for automatic startup of pentaho
 
@@ -22,6 +23,14 @@ By default, this machine uses 2 cores and 2 GB of RAM (the minimum recommended).
 * Run cmd *vagrant up*
 
 By default, you can access *Pentaho User Console* by accessing [http://localhost:8080](http://localhost:8080). To login, use *admin* as username and *password* as password. Don't push enter, click in the login button!
+
+## Usage with GUI
+
+* Remove comments from the provision within GUI relevant configurations
+* Change password of the default user in case you cannot log into
+```sudo passwd ubuntu```
+* Start
+```sudo startxfce4&```
 
 ## Useful Notes for Managing Pentaho Sever 7.1 CE
 
