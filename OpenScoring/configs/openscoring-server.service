@@ -1,0 +1,11 @@
+[Unit]
+Description=Open Scoring Server
+
+[Service]
+Type=oneshot
+ExecStart=/vagrant/configs/openscoring-start.sh
+ExecStop=/vagrant/configs/openscoring-stop.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
