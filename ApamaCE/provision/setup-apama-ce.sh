@@ -9,12 +9,12 @@ chown -R ubuntu:ubuntu /opt/softwareag/
 # Install Apama CE 10.1
 echo "Download and install Apama CE (v10.1)"
 
-apamace=apama_10.1.0.1_amd64_linux.zip
-apamacefolder=apama_10.1.0.1_amd64_linux
+apamace=apama_10.1.0.3_amd64_linux.zip	
+apamacefolder=apama_10.1.0.3_amd64_linux
 
 if [ ! -f "$apamace" ]; then
     echo "Downloading Apama CE installer. This may take more than a few minutes."
-	wget -q -o /dev/null - https://downloads.apamacommunity.com/apama/10.1.0.1/"$apamace"
+	wget -q -o /dev/null - https://downloads.apamacommunity.com/apama/10.1.0.3/"$apamace"
 else
 	echo "Apama CE is already downloaded."
 fi
