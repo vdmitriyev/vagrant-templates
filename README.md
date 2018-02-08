@@ -15,6 +15,9 @@ A collection of the different vagrant templates for personal usage.
 * How do I install a Vagrant Linux box that has a desktop / GUI ?
     - https://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment
     - https://stackoverflow.com/questions/31845472/how-do-i-install-a-vagrant-linux-box-that-has-a-gui-gnome-kde
+* In case of problmes with latest version of vagrant on Windows do the following:
+    - Install latest "Windows Management Framework"
+    - Additionally, latest version of the "PowerShell" could be installed - https://github.com/PowerShell/PowerShell/releases
 
 
 ### Collection of templates
