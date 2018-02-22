@@ -17,6 +17,7 @@ apt-get install -y sqlite
 apt-get install -y bzip2
 apt-get install -y automake bison flex g++ git libevent-dev libssl-dev libtool make pkg-config
 apt-get install nodejs
+apt-get install -y mongodb
 apt-get install -y mongodb-org
 
 echo "Creating testuser for 'modelDB'"
@@ -26,7 +27,6 @@ echo "Downloading dependencies for the 'modelDB'"
 
 mkdir /home/testuser/
 mkdir /home/testuser/modeldb/
-mkdir /home/testuser/modeldb/dependencies
 mkdir /home/testuser/modeldb/dependencies
 cd /home/testuser/modeldb/dependencies
 
