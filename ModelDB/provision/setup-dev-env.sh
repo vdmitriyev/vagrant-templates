@@ -1,14 +1,13 @@
 #!/bin/bash
 
-#
-# Preparing setup
-#
-
+# Prepearing setup
 echo "Install git"
-apt-get install -y git-core
+
+apt-get install git-core -y
 
 echo "Installing maven."
-apt-get install -y maven
+
+apt-get install maven -y
 
 #
 # MANUL WAY
