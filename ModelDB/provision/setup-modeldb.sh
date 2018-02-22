@@ -32,45 +32,46 @@ cd /home/testuser/modeldb/dependencies
 
 #
 # thrift
-#
+
 thrift=thrift-0.9.3.tar.gz
 thriftDir=thrift-0.9.3
 if [ ! -f "$thrift" ]; then
     echo "Downloading thrift installer. This may take more than a few minutes ..."
-	wget -q -o /dev/null - http://apache.mesi.com.ar/thrift/0.9.3/"$thrift"
+    wget -q -o /dev/null - http://apache.mesi.com.ar/thrift/0.9.3/"$thrift"
 else
-	echo "thrift is already downloaded."
+    echo "thrift is already downloaded."
 fi
 
 if [ -f "$thrift" ];  then
-	tar -xvzf "$thrift"
-	echo "Building thrift"
-	cd "$thriftDir"
-	./configure
-	make
-	ln -s /home/testuser/modeldb/dependencies/"$thriftDir"/compiler/cpp/thrift /usr/local/bin/thrift
-	# cd ..
-	# cd ..
-	echo "thrift was build"
+    tar -xvzf "$thrift"
+    echo "Building thrift"
+    cd "$thriftDir"
+    ./configure
+    make
+    ln -s /home/testuser/modeldb/dependencies/"$thriftDir"/compiler/cpp/thrift /usr/local/bin/thrift
+    # cd ..
+    # cd ..
+    echo "thrift was build"
 else
-	echo "ERROR: thrift installer was not found."
+    echo "ERROR: thrift installer was not found."
 fi
 
 #
 # sbt
 #
-sbt=sbt-0.9.3.tar.gz
+sbt=sbt-0.13.13.tgz
+sbtVersion=0.13.13
 if [ ! -f "$sbt" ]; then
     echo "Downloading sbt installer. This may take more than a few minutes ..."
-	wget -q -o /dev/null - https://dl.bintray.com/sbt/native-packages/sbt/0.13.13/"$sbt"
+    wget -q -o /dev/null - https://dl.bintray.com/sbt/native-packages/sbt/"$sbtVersion"/"$sbt"
 else
-	echo "sbt is already downloaded."
+    echo "sbt is already downloaded."
 fi
 
 if [ -f "$sbt" ];  then
-	tar -xvzf "$sbt"
+    tar -xvzf "$sbt"
 else
-	echo "ERROR: sbt installer was not found."
+    echo "ERROR: sbt installer was not found."
 fi
 
 #
@@ -79,17 +80,16 @@ fi
 sparkhadoop=spark-2.0.1-bin-hadoop2.7.tgz
 if [ ! -f "$sparkhadoop" ]; then
     echo "Downloading sparkhadoop installer. This may take more than a few minutes ..."
-	wget -q -o /dev/null - http://d3kbcqa49mib13.cloudfront.net/"$sparkhadoop"
+    wget -q -o /dev/null - http://d3kbcqa49mib13.cloudfront.net/"$sparkhadoop"
 else
-	echo "sparkhadoop is already downloaded."
+    echo "sparkhadoop is already downloaded."
 fi
 
 if [ -f "$sparkhadoop" ];  then
-	tar -xvzf "$sparkhadoop"
+    tar -xvzf "$sparkhadoop"
 else
-	echo "ERROR: sparkhadoop installer was not found."
+    echo "ERROR: sparkhadoop installer was not found."
 fi
-
 
 #
 # anaconda
@@ -97,15 +97,15 @@ fi
 anaconda=Anaconda2-4.2.0-Linux-x86_64.sh
 if [ ! -f "$anaconda" ]; then
     echo "Downloading anaconda installer. This may take more than a few minutes ..."
-	wget -q -o /dev/null - https://repo.continuum.io/archive/"$anaconda"
+    wget -q -o /dev/null - https://repo.continuum.io/archive/"$anaconda"
 else
-	echo "anaconda is already downloaded."
+    echo "anaconda is already downloaded."
 fi
 
 if [ -f "$anaconda" ];  then
-	chmod 777 ./Anaconda2-4.2.0-Linux-x86_64.sh
+    chmod 777 "$anaconda"
 else
-	echo "ERROR: anaconda installer was not found."
+    echo "ERROR: anaconda installer was not found."
 fi
 
 #
@@ -116,23 +116,23 @@ zeppelinDir=zeppelin-0.7.3-bin-all
 
 if [ ! -f "$zeppelin" ]; then
     echo "Downloading zeppelin installer. This may take more than a few minutes ..."
-	wget -q -o /dev/null - http://apache.lauf-forum.at/zeppelin/zeppelin-0.7.3/"$zeppelin"
+    wget -q -o /dev/null - http://apache.lauf-forum.at/zeppelin/zeppelin-0.7.3/"$zeppelin"
 else
-	echo "zeppelin is already downloaded."
+    echo "zeppelin is already downloaded."
 fi
 
 if [ -f "$zeppelin" ];  then
-	tar -xvzf "$zeppelin"
-	mv "$zeppelinDir" zeppelin
-	cp ./zeppelin/conf/zeppelin-site.xml.template ./zeppelin/conf/zeppelin-site.xml
-	sed -i -e 's/  <value>8080<\/value>/  <value>8082<\/value>/g' ./zeppelin/conf/zeppelin-site.xml
-	
-	echo "Create a sample Zeppelin notebook"
-	wget https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data
-	mkdir ./zeppelin/notebook/2C44QSZC4
-	wget https://raw.githubusercontent.com/mitdbg/modeldb-notebooks/master/scala/ModelDBSample.json -O ./zeppelin/notebook/2C44QSZC4/note.json
+    tar -xvzf "$zeppelin"
+    mv "$zeppelinDir" zeppelin
+    cp ./zeppelin/conf/zeppelin-site.xml.template ./zeppelin/conf/zeppelin-site.xml
+    sed -i -e 's/  <value>8080<\/value>/  <value>8082<\/value>/g' ./zeppelin/conf/zeppelin-site.xml
+
+    echo "Create a sample Zeppelin notebook"
+    wget https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data
+    mkdir ./zeppelin/notebook/2C44QSZC4
+    wget https://raw.githubusercontent.com/mitdbg/modeldb-notebooks/master/scala/ModelDBSample.json -O ./zeppelin/notebook/2C44QSZC4/note.json
 else
-	echo "ERROR: anaconda installer was not found."
+    echo "ERROR: anaconda installer was not found."
 fi
 
 
@@ -147,8 +147,8 @@ echo "Building 'modeldb'"
 
 cd /home/testuser/modeldb/
 git clone https://github.com/mitdbg/modeldb.git
-cd /home/testuser/modeldb/modeldb/server/codegen  
-./gen_sqlite.sh  
+cd /home/testuser/modeldb/modeldb/server/codegen
+./gen_sqlite.sh
 cd /home/testuser/modeldb/modeldb/server/
 ./start_server.sh &
 cd /home/testuser/modeldb/modeldb/client/scala/libs/spark.ml

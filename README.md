@@ -54,4 +54,9 @@ A collection of the different vagrant templates for personal usage.
     - Based on the following repository - https://github.com/minyk/nifi-sandbox
 * [ApamaCE](ApamaCE)
     - Semi-automated installation of Apama Community Edition together with some initial scripts
-
+* [OpenScoring](OpenScoring)
+    - An API that is able to accept PMML as input, evaluate it and output results
+* [ModelDB](ModelDB)
+    - A software stack that installs a machine learning models managment tool
+    - [ModelDBAndDocker](ModelDBAndDocker)
+        + The same modelDB installation, but via official docker
