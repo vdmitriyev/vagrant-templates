@@ -6,6 +6,8 @@ Installing and starting [modeldb](https://github.com/openscoring/openscoring) fo
 
 * ```vagrant plugin install vagrant-docker-compose```
 
+## Different
 
+* Run following command inside vagrant machine after start ```docker-compose up```
 
 
