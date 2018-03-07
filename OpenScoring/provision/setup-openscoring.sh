@@ -18,5 +18,9 @@ echo "Add proper configurations to the 'openscoring'"
 echo "Add the 'openscoring' to the systemd services"
 cp /vagrant/configs/openscoring-server.service /etc/systemd/system/
 
+echo "Enabling autostart of the 'openscoring' as the service"
+systemctl enable openscoring-server.service
+
 chown -R ubuntu:ubuntu /opt/
 echo "Finish installation of the 'openscoring'"
+

@@ -1,5 +1,8 @@
 [Unit]
 Description=Open Scoring Server
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
 
 [Service]
 Type=oneshot
