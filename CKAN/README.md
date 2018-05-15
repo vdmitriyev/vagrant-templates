@@ -8,7 +8,7 @@ Installing and starting [CKAN](https://github.com/ckan/ckan) for hosting open da
 * git
 * ```vagrant plugin install vagrant-docker-compose```
 
-## Prepearing a host machine
+## Prepearing a host machine (also done automatically in provision)
 
 ```
 mkdir downloads
