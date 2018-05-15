@@ -2,11 +2,13 @@
 
 Installing and starting [CKAN](https://github.com/ckan/ckan) for hosting open data. In this case special plugin for the docker compose is used - https://github.com/leighmcculloch/vagrant-docker-compose.
 
-## Dependencie
+## Dependencies on a host machine
 
+* vagrant
+* git
 * ```vagrant plugin install vagrant-docker-compose```
 
-## Prepearing host machine
+## Prepearing a host machine
 
 ```
 mkdir downloads
@@ -14,8 +16,13 @@ cd downloads
 git clone https://github.com/ckan/ckan.git
 ```
 
-## Different
+## Launch
 
-* Run following command inside vagrant machine after start ```docker-compose up```
+* Run following command inside vagrant machine after VM starts in order to launch relevant services:
+```
+cd /vagrant/downloads/ckan/contrib/docker/
+docker-compose up
+```
+* Access services via http://localhost:5000/
 
 

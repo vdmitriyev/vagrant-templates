@@ -6,10 +6,10 @@ ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf
 resolvconf -u
 
 # Update cache
-# apt-get update
+apt-get update
 
 # Upgrade packages
-# apt-get upgrade -y
+apt-get upgrade -y
 
 # Install dependencies
 apt-get install unzip -y
@@ -17,13 +17,9 @@ apt-get install dos2unix -y
 apt-get install htop -y
 apt-get install mc -y
 
-# Just in case host is a windows system
+# Just in case host is windows
 dos2unix /vagrant/provision/*.sh
-# dos2unix /vagrant/configs/*.sh
 
-# all files in download folder
-
-for FILE in /var/www/html/files/*
-do
- dos2unix FILE
-done
+# Change the type for all files in download folder on host machine
+# activate it then CKAN repo was cloned using Windows host vm
+# find /vagrant/downloads/ -type f -print0 | xargs -0 dos2unix

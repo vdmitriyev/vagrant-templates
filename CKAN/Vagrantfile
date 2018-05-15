@@ -13,7 +13,8 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
 
   # Create a forwarded port mapping which allows access to a specific port
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 5000, host: 5000
+  config.vm.network "forwarded_port", guest: 8800, host: 8800  
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -24,10 +25,15 @@ Vagrant.configure("2") do |config|
     vb.cpus = 1
   end
   
-  # Enable provisioning with a shell script
+  # Enable provisioning with a shell scripts
+  config.vm.provision "shell", path: "provision/setup-general.sh"
+  config.vm.provision "shell", path: "provision/setup-dev-env.sh"  
+  config.vm.provision "shell", path: "provision/setup-ckan.sh"
   
   # Enable provisioning with docker
   config.vm.provision :docker
-  config.vm.provision :docker_compose, yml: "/vagrant/downloads/ckan/contrib/docker/docker-compose.yml", run: "always"
-
+  # for tests
+  # config.vm.provision :docker_compose, yml: "/vagrant/downloads/ckan/contrib/docker/docker-compose.yml", run: "always"
+  config.vm.provision :docker_compose, yml: "/vagrant/downloads/ckan/contrib/docker/docker-compose.yml"
+  
 end
