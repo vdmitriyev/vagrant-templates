@@ -66,6 +66,8 @@ docker exec -u root -it ckan /bin/bash
 * Read the documentation provided
     + [Main Documentation](http://docs.ckan.org/en/latest/contents.html)
     + [Sysadmin guide](http://docs.ckan.org/en/latest/sysadmin-guide.html)
+* Also CKAN extension could be used in order to extend functionality of the platform
+    + [CKAN Extensions](http://extensions.ckan.org/)
 * Create user with sysadmin privileges (docker containers must run)
 ```
 docker exec -it ckan /bin/bash
