@@ -5,6 +5,7 @@ Installing and starting [openscoring](https://github.com/openscoring/openscoring
 ## Configurations
 
 * You will need to add your IP address of your VirtualBox host machine (e.g. 10.0.2.2) into `configs\openscoring\reference.conf`.
+* For more details check provided withi the repository bash files (all commands can be also executed manually).
 
 ## Materials
 
