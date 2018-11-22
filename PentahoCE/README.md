@@ -25,13 +25,22 @@ By default, this machine uses 2 cores and 2 GB of RAM (the minimum recommended).
 
 By default, you can access *Pentaho User Console* by accessing [http://localhost:8080](http://localhost:8080). To login, use *admin* as username and *password* as password. Don't push enter, click in the login button!
 
-## Usage with GUI on VM machine
+## Usage with GUI on VM machine (minimalist)
 
+* Enable GUI in Vagrant for VM
 * Remove comments from the provision within GUI relevant configurations
 * Change password of the default user in case you cannot log into
 ```sudo passwd ubuntu```
-* Start
+* Start within the virtualbox terminal
 ```sudo startxfce4&```
+
+## Usage with GUI on VM machine (ubuntu)
+
+* Provision using the "setup-ubuntu-desktop.sh" script
+* Enable GUI in Vagrant for VM
+* Change password of the default user in case you cannot log into
+```sudo passwd ubuntu```
+* Start as usual
 
 ## Usage on host machine (Windows)
 
@@ -58,6 +67,9 @@ By default, you can access *Pentaho User Console* by accessing [http://localhost
     - [on vm]   ```sudo nano /opt/pentaho/pentaho-server/start-pentaho.sh```
 * Article [Best Practices - Tomcat Performance Tuning for Pentaho](https://support.pentaho.com/hc/en-us/articles/210448223-Best-Practices-Tomcat-Performance-Tuning-for-Pentaho)
 
+## PostgreSQL
+
+* pentaho_user/password
 
 ## Credits
 

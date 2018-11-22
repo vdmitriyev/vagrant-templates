@@ -1,4 +1,5 @@
 .vagrant/*
 downloads/*
 installed/*
+data/*	
 *.log

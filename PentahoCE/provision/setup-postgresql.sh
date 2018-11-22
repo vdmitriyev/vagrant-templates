@@ -10,5 +10,9 @@ sed -i s/"local   all             all                                     peer"/
 # Add future needed user
 useradd pentaho_user
 
+# Install PGAdmin (can be used later with GUI)
+apt-get install pgadmin3
+
 # Reload service
 systemctl restart postgresql
+
