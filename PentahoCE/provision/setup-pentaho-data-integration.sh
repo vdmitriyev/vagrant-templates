@@ -30,7 +30,3 @@ chmod +x /vagrant/installed/opt/pentaho/data-integration/*.sh
 
 # Less Java resources consumption
 sed -i s/"-Xms1024m -Xmx2048m -XX:MaxPermSize=256m"/"-Xms768m -Xmx1536m -XX:MaxPermSize=256m"/g /vagrant/installed/opt/pentaho/data-integration/spoon.sh
-
-
-# required to run PDI on ubuntu
-apt-get -y install libwebkitgtk-1.0-0

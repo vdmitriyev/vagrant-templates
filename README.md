@@ -50,6 +50,11 @@ A collection of the different vagrant templates for personal usage.
     - Mostly based on the following repository - https://github.com/lricardo/vagrant-pentaho-biserver-5
     - Changes:
         + Put downloads into folder (/vagrant/downloads/)
+* [Knowage](Knowage)
+    - Using the following docker images - https://github.com/KnowageLabs/Knowage-Server-Docker
+    - Dependencies: docker plugin for vagrant
+    - Changes:
+        + Put downloads into folder (/vagrant/downloads/)
 * [NiFi](NiFi)
     - Based on the following repository - https://github.com/minyk/nifi-sandbox
 * [ApamaCE](ApamaCE)
@@ -60,3 +65,12 @@ A collection of the different vagrant templates for personal usage.
     - A software stack that installs a machine learning models managment tool
     - [ModelDBAndDocker](ModelDBAndDocker)
         + The same modelDB installation, but via official docker
+
+### Usefull vagrant plugins
+
+- vagrant-multi-putty
+    + allows to use putty out of the box in the same manner as embedded ssh
+    + https://github.com/nickryand/vagrant-multi-putty
+- vagrant-docker-compose
+    + allows to use docker inside the vagrant machine directly
+    + https://github.com/leighmcculloch/vagrant-docker-compose

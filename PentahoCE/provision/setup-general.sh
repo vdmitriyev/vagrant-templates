@@ -13,7 +13,6 @@ apt-get upgrade -y
 
 # Install dependencies
 apt-get install unzip -y
-apt-get install unzip -y
 apt-get install dos2unix -y
 apt-get install htop -y
 apt-get install mc -y
