@@ -18,6 +18,14 @@ A collection of the different vagrant templates for personal usage.
 * In case of problmes with latest version of vagrant on Windows do the following:
     - Install latest "Windows Management Framework"
     - Additionally, latest version of the "PowerShell" could be installed - https://github.com/PowerShell/PowerShell/releases
+* Deploy VM on different disk
+```
+set PATH=c:\Program Files\Oracle\VirtualBox\;%PATH%
+VBoxManage setproperty machinefolder <PATH>
+vagrant up
+VBoxManage setproperty machinefolder default
+```
+
 
 
 ### Collection of templates
