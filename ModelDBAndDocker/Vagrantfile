@@ -3,7 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/xenial64"
+  #config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-18.04"
 
   # Disable automatic box update checking.
   config.vm.box_check_update = false
@@ -28,9 +29,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "provision/setup-general.sh"
   config.vm.provision "shell", path: "provision/setup-dev-env.sh"
   config.vm.provision "shell", path: "provision/setup-modeldb-git-only.sh"
+  config.vm.provision "shell", path: "provision/setup-docker.sh"
   
   # Enable provisioning with docker
-  # config.vm.provision :docker
-  # config.vm.provision :docker_compose, yml: "/vagrant/downloads/modeldb/docker-compose.yml", run: "always"
+  config.vm.provision :docker
+  config.vm.provision :docker_compose, yml: "/vagrant/downloads/modeldb/docker-compose.yml", run: "always"
 
 end

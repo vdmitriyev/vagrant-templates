@@ -1,6 +1,6 @@
 ## About
 
-Installing and starting [modeldb](https://github.com/openscoring/openscoring) for managing machine learning models.
+Installing and starting [modeldb](https://github.com/mitdbg/modeldb) for managing machine learning models.
 
 ## Configurations
 
