@@ -8,7 +8,7 @@ git clone https://github.com/openscoring/openscoring.git
 
 echo "Building 'openscoring' with maven"
 cd /opt/openscoring/
-mvn clean install 
+mvn clean install
 
 echo "Add proper configurations to the 'openscoring'"
 # mv /opt/openscoring/openscoring-service/target/classes/reference.conf /opt/openscoring/openscoring-service/target/classes/reference.conf-default
