@@ -18,6 +18,10 @@ A collection of the different vagrant templates for personal usage.
 * In case of problmes with latest version of vagrant on Windows do the following:
     - Install latest "Windows Management Framework"
     - Additionally, latest version of the "PowerShell" could be installed - https://github.com/PowerShell/PowerShell/releases
+* Use custom vagrant installation
+```
+set PATH=c:\Soft\Vagrant-v1.9\bin\;%PATH%
+```
 * Deploy VM on different disk
 ```
 set PATH=c:\Program Files\Oracle\VirtualBox\;%PATH%
@@ -25,8 +29,6 @@ VBoxManage setproperty machinefolder <PATH>
 vagrant up
 VBoxManage setproperty machinefolder default
 ```
-
-
 
 ### Collection of templates
 
@@ -70,11 +72,13 @@ VBoxManage setproperty machinefolder default
 * [OpenScoring](OpenScoring)
     - An API that is able to accept PMML as input, evaluate it and output results
 * [ModelDB](ModelDB)
-    - A software stack that installs a machine learning models managment tool
+    - A software stack that installs a machine learning models management tool
     - [ModelDBAndDocker](ModelDBAndDocker)
         + The same modelDB installation, but via official docker
+* [SupersetAndDocker]
+    - Apache Superset (incubating) is a modern, enterprise-ready business intelligence web application
 
-### Usefull vagrant plugins
+### Useful vagrant plugins
 
 - vagrant-multi-putty
     + allows to use putty out of the box in the same manner as embedded ssh
