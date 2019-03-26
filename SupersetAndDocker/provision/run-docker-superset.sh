@@ -3,7 +3,8 @@
 # Prepearing setup
 echo "Run 'Apache Superset' with docker"
 
-cd /vagrant/downloads/incubator-superset/contrib/docker/
+#cd /vagrant/downloads/incubator-superset/contrib/docker/
+cd /opt/incubator-superset/contrib/docker/
 
 # prefix with SUPERSET_LOAD_EXAMPLES=yes to load examples:
 # docker-compose run --rm superset ./docker-init.sh
