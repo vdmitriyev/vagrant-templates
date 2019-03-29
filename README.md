@@ -86,3 +86,9 @@ VBoxManage setproperty machinefolder default
 - vagrant-docker-compose
     + allows to use docker inside the vagrant machine directly
     + https://github.com/leighmcculloch/vagrant-docker-compose
+
+### Docker Infos
+
+* [How to Update a Single Running docker-compose Container](https://staxmanade.com/2016/09/how-to-update-a-single-running-docker-compose-container/)
+    - Useful when container contentiously restarts itself
+    - Useful when some commands need to be applied

@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "provision/setup-general.sh"
   config.vm.provision "shell", path: "provision/setup-dev-env.sh"
   config.vm.provision "shell", path: "provision/setup-docker.sh"
-  config.vm.provision "shell", path: "provision/setup-superset-git-once.sh"
+  config.vm.provision "shell", path: "provision/setup-superset-git-once.sh" # requires manual interaction, because of the fabmanager
   
   
   # Enable provisioning with docker
@@ -40,6 +40,6 @@ Vagrant.configure("2") do |config|
   # config.vm.provision :docker_compose, yml: "/vagrant/downloads/incubator-superset/contrib/docker/docker-compose.yml", run: "always"
   
   # On boot
-  config.vm.provision "shell", path: "provision/run-docker-superset.sh", run: "always"
+  # config.vm.provision "shell", path: "provision/run-docker-superset.sh", run: "always"
 
 end

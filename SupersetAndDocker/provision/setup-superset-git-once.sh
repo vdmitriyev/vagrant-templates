@@ -17,6 +17,9 @@ mkdir /opt
 cd /opt
 git clone https://github.com/apache/incubator-superset/
 
+# owner of the files should be changed, otherwise there are problems inside docker container
+chown -r vagrant:vagrant /opt/incubator-superset
+
 cd /opt/incubator-superset/contrib/docker/
 dos2unix *.sh
 
