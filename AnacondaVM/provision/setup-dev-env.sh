@@ -3,28 +3,25 @@
 echo "Install some utilities"
 
 # Some utilities
-sudo apt-get install software-properties-common
-sudo apt-get install python-software-properties
+apt-get install software-properties-common -y
+apt-get install python-software-properties -y
 
 # Compiler and headers
 apt-get install gcc make build-essential linux-headers-$(uname -r)
 
 # Prepearing setup
 echo "Install git"
-
 apt-get install git-core -y
 
-echo "Installing maven."
-
-apt-get install maven -y
-
+# echo "Installing maven."
+# apt-get install maven -y
 
 # Ant
-echo "Installing Ant"
-apt-get install ant1.7 -y > /dev/null
+# echo "Installing Ant"
+# apt-get install ant1.7 -y > /dev/null
 
 # Lua
-echo "Installing lua"
+# echo "Installing lua"
 # apt-get install lua5.1
 
 

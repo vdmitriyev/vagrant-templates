@@ -2,11 +2,13 @@
 
 echo "Trying to install Anaconda"
 # anaconda=Anaconda-2.3.0-Linux-x86_64.sh
-anaconda=Anaconda3-5.0.1-Linux-x86.sh
+# anaconda=Anaconda3-5.0.1-Linux-x86.sh
+anaconda=Anaconda3-2018.12-Linux-x86_64.sh
+
 
 if [ ! -f "$anaconda" ]; then
     echo "Downloading Anaconda installer. This may take more than a few minutes."
-	wget -q -o /dev/null - http://repo.continuum.io/archive/"$anaconda"
+	wget -q -o /dev/null - https://repo.anaconda.com/archive/"$anaconda"
 else
 	echo "Anaconda is already downloaded."
 fi
@@ -33,21 +35,10 @@ else
 	echo "ERROR: Anaconda installer is not found"
 fi
 
+# jupyter notebook --generate-config
+
 echo "Finish to install Anaconda"
 
 # Reloading bash 
 echo "Reloading .bashrc"
 source /home/vagrant/.bashrc
-
-# Starting jupyter Notebook
-echo "Trying to start jupyter Notebook"
-
-notebook="/home/vagrant/jupyter"
-port=8888
-if [ -d "$notebook" ]; then
-	jupyter  notebook --ip='*' --port="$port"--notebook-dir="$notebook" --no-browser &
-	echo "Jupyter Notebook must be running on port $port"
-else
-	echo "ERROR: Jupyter Notebook was not started."
-	echo "INFO: Try to create folder $notebook"
-fi

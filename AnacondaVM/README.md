@@ -1,6 +1,11 @@
 ### About
 
-Installing [Anaconda](https://www.continuum.io/downloads) with Vagrant. Current variant uses pure shell script to install Anaconda, git and run Jupyter in particular folder.
+Installing [Anaconda](https://www.anaconda.com/distribution/) with Vagrant. Current variant uses pure shell script and git to install Anaconda, and then to run it as a Jupyter Notebook in particular folder.
+
+### Access
+
+* URL: http://localhost:8888/
+* Credentials: letmein
 
 ### Other variants
 
