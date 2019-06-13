@@ -1,6 +1,6 @@
 ## About
 
-Installing "Apama CE 10.1".
+Installing "Apama CE 10.3".
 
 ## Running Apama via comman line
 
@@ -26,7 +26,7 @@ correlator
 ```
 * Delete monitors
 ```
-/opt/softwareag/Apama/bin/engine_delete com.apama.security.Security;
+/opt/softwareag/Apama/bin/engine_delete com.apama.security.Security
 /opt/softwareag/Apama/bin/engine_delete com.apama.security.SecurityEventsGenerator
 ```
 * Sending events on by one
