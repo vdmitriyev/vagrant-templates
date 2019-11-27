@@ -1,6 +1,8 @@
 ## About
 
-Installing "Apama CE 10.1".
+Installing "Apama CE 10.5".
+
+NOTE: The Apama CE in this constalation have to run under default ```ubuntu``` user (```sudo su ubuntu```).
 
 ## Running Apama via comman line
 
@@ -26,7 +28,7 @@ correlator
 ```
 * Delete monitors
 ```
-/opt/softwareag/Apama/bin/engine_delete com.apama.security.Security;
+/opt/softwareag/Apama/bin/engine_delete com.apama.security.Security
 /opt/softwareag/Apama/bin/engine_delete com.apama.security.SecurityEventsGenerator
 ```
 * Sending events on by one

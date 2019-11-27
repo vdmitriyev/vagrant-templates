@@ -18,6 +18,8 @@ A collection of the different vagrant templates for personal usage.
 * In case of problmes with latest version of vagrant on Windows do the following:
     - Install latest "Windows Management Framework"
     - Additionally, latest version of the "PowerShell" could be installed - https://github.com/PowerShell/PowerShell/releases
+* Resizing Vagrant box disk space
+    - https://tuhrig.de/resizing-vagrant-box-disk-space/
 * Use custom vagrant installation
 ```
 set PATH=c:\Soft\Vagrant-v1.9\bin\;%PATH%
