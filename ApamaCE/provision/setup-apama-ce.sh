@@ -6,6 +6,7 @@ echo "Preparing Apama CE (v10.5) setup"
 mkdir /opt/softwareag/
 chown -R ubuntu:ubuntu /opt/softwareag/
 
+
 mkdir /vagrant/downloads/
 cd /vagrant/downloads/
 

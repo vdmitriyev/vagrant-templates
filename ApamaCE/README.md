@@ -4,6 +4,7 @@ Installing "Apama CE 10.5".
 
 NOTE: The Apama CE in this constalation have to run under default ```ubuntu``` user (```sudo su ubuntu```).
 
+
 ## Running Apama via comman line
 
 * Use scripts that are in "apama-scripts" on your host or in /vagrant/apama-scripts/ at your VM
