@@ -94,3 +94,5 @@ VBoxManage setproperty machinefolder default
 * [How to Update a Single Running docker-compose Container](https://staxmanade.com/2016/09/how-to-update-a-single-running-docker-compose-container/)
     - Useful when container contentiously restarts itself
     - Useful when some commands need to be applied
+* Issues with memory -> increase swap memory
+    - http://www.inanzzz.com/index.php/post/gz4x/preventing-composer-crash-in-vagrant-proc-open-fork-failed-cannot-allocate-memory
