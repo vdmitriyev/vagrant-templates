@@ -96,3 +96,6 @@ VBoxManage setproperty machinefolder default
     - Useful when some commands need to be applied
 * Issues with memory -> increase swap memory
     - http://www.inanzzz.com/index.php/post/gz4x/preventing-composer-crash-in-vagrant-proc-open-fork-failed-cannot-allocate-memory
+* Prune/clean docker
+    - https://forums.docker.com/t/some-way-to-clean-up-identify-contents-of-var-lib-docker-overlay/30604
+        - ```docker volume rm $(docker volume ls -qf dangling=true)```

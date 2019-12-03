@@ -4,9 +4,9 @@ Installing and starting [Apache Superset](https://github.com/apache/incubator-su
 
 ## Software+vagrant specific
 
-* This software worsk with symlinks intensively. And in case of the shared folder under vagrant, it produces conflict with nativ sync from vagrant (example - https://github.com/yarnpkg/yarn/issues/4908). To solve this issue, don't put your files into /vagrant or /home/vagrant folders (it's already considered in provision).
+* This software worsk with symlinks intensively. And in case of the shared folder under vagrant, it produces conflict with native sync from vagrant (example - https://github.com/yarnpkg/yarn/issues/4908). To solve this issue, don't put your files into /vagrant or /home/vagrant folders (it's already considered in provision).
 
-## Dependencie
+## Dependencies
 
 * ```vagrant plugin install vagrant-docker-compose```
 
